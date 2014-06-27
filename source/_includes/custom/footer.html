@@ -1,6 +1,13 @@
 Copyright &copy; {{ site.time | date: "%Y" }}
 {% if site.author %}
     {{ site.author }}
+{% elsif site.authors %}
+    {% for author in site.authors %}
+          <span class="author">
+            <img src="http://avatars.io/twitter/{{ author[0] }}">
+            <a href="https://twitter.com/{{ author[0] }}">
+                 @{{ author[1] }}</a></span>
+    {% endfor %}
 {% else %}
     {{ site.title }}
 {% endif %}

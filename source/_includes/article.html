@@ -6,7 +6,16 @@
 			<span class="comments"><a href="{{ root_url }}{{ post.url }}#disqus_thread">Comments</a></span>
 		{% endif %}
 	</div>
-	<h1 class="title" itemprop="name"><a href="{{ root_url }}{{ post.url }}" itemprop="url">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
+	<h1 class="title" itemprop="name"><a href="{{ root_url }}{{ post.url }}" itemprop="url">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
+          {% if post.author %}
+          <span class="author">por
+
+            <a href="https://twitter.com/{{ post.author }}">
+              @{{ post.author }}
+              <img src="http://avatars.io/twitter/{{ post.author }}">
+          </a></span>
+          {% endif %}
+        </h1>
 	<div class="entry-content" itemprop="articleBody">
 		{{ content | excerpt }}
 		{% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}

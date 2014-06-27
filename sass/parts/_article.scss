@@ -17,6 +17,18 @@ article{
 			color: $color-gray01;
 		}
 	}
+	span.author{
+		font-size: 0.5em;
+		color: $color-gray02;
+		img {
+			position: relative;
+			top: 7px;
+			width: 32px;
+			height: 32px;
+			border-radius: 100px;
+			box-shadow:         0px 0px 6px 0px #888;
+		}
+	}
 	.entry-content{
 		line-height: 2;
 		text-align: justify;
